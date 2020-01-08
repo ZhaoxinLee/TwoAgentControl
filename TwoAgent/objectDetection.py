@@ -11,7 +11,7 @@ def algorithmNotDefined(imageFiltered,imageOriginal,*args):
 
 def detectBiggestContour(imageFiltered,imageOriginal,particles):
     nOfSamples = 3
-    im2, contours, hierarchy = cv2.findContours(imageFiltered, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+    contours, hierarchy = cv2.findContours(imageFiltered, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     cnts = sorted(contours, key = cv2.contourArea, reverse = True)[:nOfSamples]
     cdict = [(255,0,0),(0,0,255),(0,255,0)]
     lastCenter =[]
